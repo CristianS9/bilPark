@@ -1,0 +1,45 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.contenido-login {
+	display: none;
+}
+
+.popup-login {
+	display: grid;
+	grid-gap: 10px;
+}
+
+.popup-login>label {
+	display: grid;
+	grid-template-columns: auto 24px;
+	grid-gap: 5px;
+}
+
+.popup-login>label>input {
+	height: 50px;
+	padding: 10px 30px;
+}
+
+.respuesta {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+
+}
+
+.respuesta>i {
+	display: none;
+	font-size: 20px;
+}
+
+.fa-check {
+	color: #34b989;
+}
+
+.fa-times {
+	color: #ce4a55;
+}
