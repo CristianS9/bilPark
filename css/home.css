@@ -4,9 +4,10 @@
 	box-sizing: border-box;
 }
 
-.contenidos-popup{
-	display:none;
+.contenidos-popup {
+	display: none;
 }
+
 .contenido-login {
 	display: none;
 }
@@ -46,6 +47,18 @@
 .fa-times {
 	color: #ce4a55;
 }
-.popup-registro>label>.respuesta>p{
-	display:none;
+
+.popup-registro>label>.respuesta>p {
+	display: none;
+}
+
+.popup-registro>label>.input-base>i {
+	display: none;
+	font-size: 20px;
+}
+
+.input-base {
+	display: grid;
+	grid-template-columns: 1fr 25px;
+	grid-gap: 10px;
 }
