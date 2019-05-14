@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 }
 
+.contenidos-popup{
+	display:none;
+}
 .contenido-login {
 	display: none;
 }
@@ -42,4 +45,7 @@
 
 .fa-times {
 	color: #ce4a55;
+}
+.popup-registro>label>.respuesta>p{
+	display:none;
 }
