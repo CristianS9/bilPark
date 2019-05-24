@@ -36,6 +36,24 @@
             echo $res;
 
         }
+        public function login(){
+            $this->load->model("Usuario_Model");
+
+            $res = $this->Usuario_Model->login(
+                $this->input->post("usuario"),
+                $this->input->post("contrasena")
+            );
+
+            echo $res;
+            
+        }
+        public function logout(){
+            $this->load->model("Usuario_Model");
+
+            $res = $this->Usuario_Model->logout();
+
+            echo $res;
+        }
     }
 
 

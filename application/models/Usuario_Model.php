@@ -73,6 +73,39 @@
             }
             
         }
+
+        public function login($usuario,$contrasena){
+            
+            try {
+                $this->load->database();
+                $datos_usuario = $this->db->get_where("usuarios",["usuario"=>$usuario]);
+                $contrasaena_original = $datos_usuario->row("contrasena");
+                
+                if(password_verify($contrasena,$contrasaena_original)){
+                        $this->load->library("session");
+                        $id= $datos_usuario->row("id");
+                        
+                        $this->session->set_userdata("id",$id);
+                        $this->session->set_userdata("usuario",$usuario);
+                        
+                        return 0;
+                } else {
+                    return 2;
+                }
+            } catch (Throwable $th) {
+                return $th;
+            }
+        }
+        public function logout(){
+            try {
+                 $this->load->library("session");
+                $this->session->unset_userdata("id");
+                $this->session->unset_userdata("usuario");
+                return 0;
+            } catch (Throwable $th) {
+                return 1;
+            }
+        }
         
     }
 
