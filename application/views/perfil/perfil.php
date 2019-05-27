@@ -37,38 +37,64 @@
     <div class="container">
         <?php $this->load->view("componentes/header");?>
         <section>
-            <div class="info-perfil"></div>
+            <div class="info-perfil">
                 <h3>Datos Personales</h3>
-                <div>
-                    <p>Usuario</p>
-                    <p><?php echo $perfil->usuario;?></p>
+                <div class="datos">
+                    <div>
+                        <p>Usuario</p>
+                        <p><?php echo $perfil->usuario;?></p>
+                    </div>
+                    <div>
+                        <p>Contraseña</p>
+                        <p>**********</p>
+                    </div>
+                    <div>
+                        <p>Nombre</p>
+                        <p><?php echo $perfil->nombre;?></p>
+                    </div>
+                    <div>
+                        <p>Apellidos</p>
+                        <p><?php echo $perfil->apellidos;?></p>
+                    </div>
+                    <div>
+                        <p>Email</p>
+                        <p><?php echo $perfil->email;?></p>
+                    </div>
+                    <div>
+                        <p>Telefono</p>
+                        <p><?php echo $perfil->telefono;?></p>
+                    </div>
                 </div>
-                <div>
-                    <p>Contraseña</p>
-                    <p>**********</p>
-                </div>
-                <div>
-                    <p>Nombre</p>
-                    <p><?php echo $perfil->nombre;?></p>
-                </div>
-                <div>
-                    <p>Apellidos</p>
-                    <p><?php echo $perfil->apellidos;?></p>
-                </div>
-                <div>
-                    <p>Email</p>
-                    <p><?php echo $perfil->email;?></p>
-                </div>
-                <div>
-                    <p>Telefono</p>
-                    <p><?php echo $perfil->telefono;?></p>
-                </div>
-                
-                
+            </div>
+            <div class="info-reservas">
+                <h3>Reservas</h3>
+                <div class="datos">
+                    <div class="titulos">
+                        <p>Zona</p>
+                        <p>Aparcamiento</p>
+                        <p>Reservado</p>
+                        <p>Entrada</p>
+                        <p>Salida</p>
+                    </div>
+                    <?php
+                        foreach ($reservas as $reserva) {
 
+                    ?>
+                        <div class="reserva_<?php echo $reserva->id;?>">
+                            <p><?php echo $reserva->zona;?></p>
+                            <p><?php echo $reserva->aparcamiento;?></p>
+                            <p><?php echo substr($reserva->fecha,0,16);?></p>
+                            <p><?php echo substr($reserva->hora_entrada,11,5);?></p>
+                            <p><?php echo substr($reserva->hora_salida,11,5);?></p>
+                            <i class="fas fa-trash-alt eliminar-reserva" idReserva="<?php echo $reserva->id;?>"></i>
+                        </div>
+                        
+                    <?php
+                        }
+                    ?>
 
-                
-            <div class="info-reservas"></div>
+                </div>
+            </div>
         </section>
     </div>
     

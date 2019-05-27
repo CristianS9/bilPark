@@ -4,6 +4,7 @@
         <a href="<?php echo base_url() ?>index.php/home">Turismo</a>
         <a href="<?php echo base_url() ?>index.php/reservar">Reservar Parking</a>
         <a href="<?php echo base_url() ?>index.php/empresas">Para Empresas</a>
+        <a href="<?php echo base_url() ?>index.php/actualizaciones">Actualizaciones</a>
   
         <?php 
             $admin = "none";

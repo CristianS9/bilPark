@@ -1,0 +1,35 @@
+section {
+	padding: 100px;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	grid-gap: 100px;
+}
+
+.padre {
+	border-left: 10px solid dodgerBlue;
+	padding: 0px 30px;
+	display: grid;
+	grid-gap: 100px;
+
+
+}
+
+.punto {
+	display: grid;
+	grid-template-columns: 30px auto;
+	grid-gap: 10px;
+	align-items: center;
+}
+
+.circulito {
+	width: 30px;
+	height: 30px;
+	background-color: #92c7fb;
+	border-radius: 50%;
+	transform: translateX(-50px);
+}
+
+strong {
+	color: #2677a5;
+}
