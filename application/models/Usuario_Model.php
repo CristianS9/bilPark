@@ -6,6 +6,7 @@
             $this->load->database();
 
             $res = $this->db->get_where("usuarios",["usuario"=>$nombre])->row("usuario");
+            $this->db->close();
             if(gettype($res)=="string"){
                 return 1;
             } else {
@@ -17,12 +18,40 @@
             $this->load->database();
 
             $res = $this->db->get_where("usuarios",["email"=>$email])->row("usuario");
+            $this->db->close();
              if(gettype($res)=="string"){
                 return 1;
             } else {
                 return 0;
             }
            
+        }
+        public function restringirAdmin(){
+            $this->load->helper("url");
+            $this->load->library("session");
+            $rang = $this->session->rango; 
+            if($rang!=2 && $rang!=3){
+                redirect("home");
+            }
+        }
+        public function restringirLogin(){
+               $this->load->helper("url");
+            $this->load->library("session");
+            
+            if(!isset($this->session->usuario)){
+                redirect("home");
+            }
+        }
+        public function getPerfil(){
+            $this->load->library("session");
+            $this->load->database();
+            try {
+                $perfil = $this->db->get_where("usuarios",["id"=>$this->session->id])->result();
+                $this->db->close();
+                return $perfil[0];
+            } catch (Throwable $err) {
+                return 1;
+            }
         }
         public function registrar($usuario,$contrasena,$rcontrasena,$email,$remail,$nombre,$apellidos,$telefono){
             $correcto = true;
@@ -62,7 +91,8 @@
                         "email"=>$email,
                         "contrasena"=>password_hash($contrasena,PASSWORD_BCRYPT),
                         "telefono"=>$telefono
-                    ],);
+                    ]);
+                    $this->db->close();
                     return 1;
                 } catch (Throwable $err) {
                     return $err;
@@ -79,15 +109,17 @@
             try {
                 $this->load->database();
                 $datos_usuario = $this->db->get_where("usuarios",["usuario"=>$usuario]);
+                $this->db->close();
                 $contrasaena_original = $datos_usuario->row("contrasena");
                 
                 if(password_verify($contrasena,$contrasaena_original)){
                         $this->load->library("session");
                         $id= $datos_usuario->row("id");
+                        $rango = $datos_usuario->row("rango");
                         
                         $this->session->set_userdata("id",$id);
                         $this->session->set_userdata("usuario",$usuario);
-                        
+                        $this->session->set_userdata("rango",$rango);
                         return 0;
                 } else {
                     return 2;
@@ -98,12 +130,33 @@
         }
         public function logout(){
             try {
-                 $this->load->library("session");
+                $this->load->library("session");
                 $this->session->unset_userdata("id");
                 $this->session->unset_userdata("usuario");
+                $this->session->unset_userdata("rango");
                 return 0;
             } catch (Throwable $th) {
                 return 1;
+            }
+        }
+        public function datosLogin(){
+            try {
+                $this->load->library("session");
+                if(isset($this->session->id)){
+                    $this->load->database();
+                    $id = $this->session->id;
+                    $res = $this->db->get_where("usuarios",["id"=>$id]);
+                    $this->db->close();
+                    $datos = [
+                        "usuario" =>$res->row("usuario"),
+                        "id" => $res->row("id"),
+                        "rango" => $res->row("rango")
+                    ];
+
+                    echo json_encode($datos);
+                }
+            } catch (Throwable $err) {
+                return $err;
             }
         }
         

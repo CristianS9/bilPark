@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>bilPark</title>
+    <title>Perfil</title>
 
     <!--JQuery -->
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
@@ -27,19 +27,48 @@
     
 
     <link rel="stylesheet" href="<?php echo base_url();?>css/componentes/header.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>css/home.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/perfil.css">
     <script src="<?php echo base_url();?>js/componentes/header.js"></script>
-    <script src="<?php echo base_url();?>js/home.js"></script>
+    <script src="<?php echo base_url();?>js/perfil.js"></script>
 
 
 </head>
 <body>
-   
     <div class="container">
         <?php $this->load->view("componentes/header");?>
         <section>
-            <iframe src="https://turismo.euskadi.eus/es/top10/localidades/bilbao/aa30-12376/es/" frameborder="0"></iframe>
-        
+            <div class="info-perfil"></div>
+                <h3>Datos Personales</h3>
+                <div>
+                    <p>Usuario</p>
+                    <p><?php echo $perfil->usuario;?></p>
+                </div>
+                <div>
+                    <p>Contraseña</p>
+                    <p>**********</p>
+                </div>
+                <div>
+                    <p>Nombre</p>
+                    <p><?php echo $perfil->nombre;?></p>
+                </div>
+                <div>
+                    <p>Apellidos</p>
+                    <p><?php echo $perfil->apellidos;?></p>
+                </div>
+                <div>
+                    <p>Email</p>
+                    <p><?php echo $perfil->email;?></p>
+                </div>
+                <div>
+                    <p>Telefono</p>
+                    <p><?php echo $perfil->telefono;?></p>
+                </div>
+                
+                
+
+
+                
+            <div class="info-reservas"></div>
         </section>
     </div>
     

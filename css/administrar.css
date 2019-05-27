@@ -1,0 +1,76 @@
+section {
+	padding: 50px;
+}
+
+.aparcamientos {
+	display: grid;
+	padding: 20px;
+
+}
+
+
+.datos {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+
+	padding: 10px;
+	justify-items: center;
+}
+
+.aparcamiento {
+	border-bottom: 1px solid rgb(218, 218, 218);
+	display: grid;
+	grid-template-columns: auto 25px;
+}
+
+.aparcamiento:hover {
+	border-color: dodgerblue;
+	color: dodgerblue;
+}
+
+.titulos {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	padding: 20px 30px;
+	justify-items: center;
+	color: crimson;
+}
+
+.add-aparcamiento {
+	text-decoration: none;
+	color: crimson;
+	border: 1px solid #c3c1c1;
+	padding: 5px 20px;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.05);
+	box-shadow: 2px 2px 1px #0000002e;
+	display: inline-block;
+}
+
+.add-aparcamiento:hover {
+	transform: translate(1px, 1px);
+	box-shadow: 1px 1px 1px #0000002e;
+}
+
+.editar {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.editar>* {
+	font-size: 20px;
+	border: 2px solid;
+	border-radius: 4px;
+	padding: 4px;
+	cursor: pointer;
+	color: #c5c1c1;
+}
+
+.editar>*:hover {
+	color: grey;
+}
+.contenido-popup{
+    display: none;
+}

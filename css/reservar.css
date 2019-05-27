@@ -1,0 +1,129 @@
+.mapa {
+	border: 2px solid grey;
+	width: 1000px;
+	height: 600px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../images/zonas/base.JPG);
+	position: relative;
+}
+
+.simbolo-mapa {
+	position: absolute;
+	display: none;
+	justify-content: center;
+	align-content: center;
+	transform: translate(-50%, -50%);
+}
+
+.simbolo-mapa>i {
+	font-size: 25px;
+	color: #ffda00;
+	cursor: pointer;
+	text-shadow: 2px 2px 3px black;
+	box-shadow: 2px 2px 10px white;
+}
+
+.simbolo-mapa>i:hover {
+	font-size: 27px;
+}
+
+section {
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-auto-flow: column;
+}
+
+
+.sel-zona>p {
+	padding: 20px;
+
+}
+
+.sel-zona {
+	padding: 0px 10px;
+	grid-gap: 10px;
+	display: grid;
+}
+
+.zonas {
+	display: grid;
+	box-shadow: 2px 2px 5px #c1c1c1;
+	border-radius: 4px;
+}
+
+.zonas>div {
+	border-bottom: 1px solid #f1f1f1;
+	cursor: pointer;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	padding: 5px 10px;
+}
+
+.zonas>div:hover {
+	background-color: #59b9f9;
+	color: white;
+}
+
+.ui-timepicker-container {
+	z-index: 1112 !important;
+}
+
+.eleccion-tiempo {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.zonas>div:hover {
+	background-color: #59b9f9;
+}
+
+.ui-timepicker-container {
+	z-index: 1112 !important;
+}
+
+.abrir-zonas {
+	color: dodgerblue;
+	border-color: dodgerblue;
+	background-color: white;
+	padding: 0px 20px;
+	cursor: pointer;
+
+}
+
+.vex-content.popup-info_aparcamiento {
+	display: grid !important;
+	grid-gap: 20px;
+}
+
+.vex-content.popup-info_aparcamiento .eleccion-tiempo p {
+	color: dodgerblue;
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: left;
+	align-items: center;
+}
+
+.vex-content.popup-info_aparcamiento input {
+	padding: 10px;
+	font-size: 15px;
+	text-align: center;
+}
+
+.reservar-aparcamiento {
+	border-radius: 4px;
+	color: #bbb9b9;
+	border: 1px solid;
+	background-color: white;
+	padding: 15px 40px;
+	cursor: pointer;
+	box-shadow: 3px 3px 2px #c7c7c7;
+}
+
+.reservar-aparcamiento:hover {
+	transform: translate(2px, 2px);
+	box-shadow: 1px 1px 2px #c7c7c7;
+	color: dodgerblue;
+}

@@ -1,0 +1,61 @@
+section {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	padding: 100px;
+}
+
+.contenido {
+	width: 1400px;
+	display: grid;
+	grid-gap: 110px;
+	align-items: center;
+	justify-items: center;
+}
+
+.beneficios {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.beneficios i {
+	font-size: 50px;
+}
+
+h1 {
+	font-size: 40px;
+	color: dodgerblue;
+}
+
+strong {
+	color: crimson;
+}
+
+h3 {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	justify-content: left;
+	grid-gap: 20px;
+	padding: 20px 50px;
+}
+
+.contacto {
+	display: grid;
+	grid-gap: 20px;
+}
+
+.contacto div {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: center;
+	grid-gap: 20px;
+
+}
+
+h2 {
+	font-size: 20px;
+	color: dodgerblue;
+}

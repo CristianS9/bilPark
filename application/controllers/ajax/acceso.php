@@ -54,6 +54,15 @@
 
             echo $res;
         }
+        public function datosLogin(){
+            $this->load->model("Usuario_Model");
+          
+
+            $res = $this->Usuario_Model->datosLogin();
+
+            echo $res;
+            
+        }
     }
 
 
